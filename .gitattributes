@@ -1,0 +1,2 @@
+data/mini_sparkify_event_data.json filter=lfs diff=lfs merge=lfs -text
+data/medium_sparkify_event_data.json filter=lfs diff=lfs merge=lfs -text
