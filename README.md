@@ -1,6 +1,6 @@
 # Sparkify
 
-This project is provides a Jupyter Notebook with multiple Machine Learning models for preditcting the user churn of a music streaming service called Sparkify. For more information about this project please take a look at this blogpost [here](https://lethiess.medium.com/how-to-detect-user-churn-in-a-early-state-4a51e52c37e7).
+This is the Capstone project of Udacity's Data Science Nanodegree programm. This project repository provides a Jupyter Notebook with multiple Machine Learning models for preditcting the user churn of a music streaming service called Sparkify. For more information about this project please take a look at this blogpost [here](https://lethiess.medium.com/how-to-detect-user-churn-in-a-early-state-4a51e52c37e7).
 
 The notebook contains following parts:
 * Data Exploration
