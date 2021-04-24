@@ -17,8 +17,8 @@ This is the capstone project of Udacity's Data Science Nanodegree programm. This
 ## Problem
 
 Sparkify is an imaginary music streaming platform with two types of membership:
-1. premium: monthly paid rate
-2. free: advert financed
+1. **premium:** monthly paid rate
+2. **free:** advert financed
 
 As many other modern platforms Sparkify has to deal with **user churn**. This is a huge problem and can cost millions in revenue. In Sparkify's case there are two types of user churn:
 1. Downgrade from paid premium membership to a free ad-financed membership 
