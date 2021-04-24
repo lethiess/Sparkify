@@ -92,9 +92,10 @@ The most important feature is the feature churn which indicates the user churn.
 | 1           | User at lear once accessed the page "Cancellation Confirmation"
 
 **Note I:** This vaule should be predicted and is the target variable for all applyied Machine Learning algorithms.
+
 **Note II:** The distribution of the churn values are imbalanced in the given dataset.
 
-### Define: Categorical features
+### Define categorical features
 
 The following table contains all used categorical variables:
 
@@ -106,7 +107,9 @@ The following table contains all used categorical variables:
 | Operating System	|5 | This variable describes which operating system was used to access Sparkify.
 | Browser |	4	| Which browser was used to access Sparkify is described by the user.
 
-### Define: Numerical features
+**Note:** A [String Indexer](https://spark.apache.org/docs/latest/ml-features#stringindexer) is used to convert the categorical variables into a numerical value which represents a category.
+
+### Define numerical features
 
 The following table contains all used numerical variables:
 
@@ -122,12 +125,19 @@ The following table contains all used numerical variables:
 | Num of Downgrades	| The number how often a user performed a downgrade from paid to free account.
 | Advert rolled	| Number of adverts where showed to user with a free account.
 
+**Note:** A [Standard Scaler](https://spark.apache.org/docs/latest/ml-features#standardscaler) is used to normalize all numeric variables. 
+
 
 ## Creating the model dataset
 
+The model dataset contrains the churn feature and the categorical and numerical variables. Whereas the churn features is used as target variable in the subsequent Machine Learning algorithms to classify if a user will churn or not. Each prediction is based on the categorical and numerical features. 
 
+For an efficient processing the features will be processed with a [Spark ML Pipeline](https://spark.apache.org/docs/latest/ml-pipeline.html) with the following stages:
+* [String Indexer](https://spark.apache.org/docs/latest/ml-features#stringindexer)
+* [Standard Scaler](https://spark.apache.org/docs/latest/ml-features#standardscaler)
+* [Vector Assembler](https://spark.apache.org/docs/latest/ml-features#vectorassembler)
 
-
+The last step is very important and the result is a single vector including all features for each dataset entry.
 
 ## Building Model
 
