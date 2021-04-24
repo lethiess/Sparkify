@@ -156,13 +156,13 @@ All created models are able to predict the user churn in Sparkify's event data. 
 
 | Classifier                | F1-score  | Accuracy
 | :---                      | :---      | :---
-| LogisticRegression        | 0.77      | 0.80
-| RandomForestClassifier    | 0.71      | 0.76
+| LogisticRegression        | 0.79      | 0.80
+| RandomForestClassifier    | 0.82      | 0.84
 | GBTClassifier             | 0.77      | 0.80 
 | LinearSVC                 | 0.77      | 0.80
 
 
-After cross validation with the used parameter grid three classifier have performed equaly. This is a bit unexpected and could be a sign of overfitting or a dataset in need of improvement.
+After cross validation with the used parameter grid the Random Forest classifier has performed best. Unless this good result it is recommended to use the Logistic Regression classifier, thus it is deterministic, because there is no random component in it. 
 
 For furhter detailes please take a look at the notebook and the [this](https://lethiess.medium.com/how-to-detect-user-churn-in-a-early-state-4a51e52c37e7) blogpost.
 
