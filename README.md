@@ -1,18 +1,20 @@
-# Sparkify
+# **Sparkify**
 
-### Table of Contents
+## Table of Contents
 
-1. [Project Motivation and Overview](#motivation)
-2. [Results](#results)
-3. [File Descriptions](#files)
-4. [Installation](#installation)
+1. [Project Overview](#overview)
+2. [Data Exploration](#data-exploration)
+3. [Methodology](#methodology)
+4. [Results](#results)
+5. [File Descriptions](#files)
+6. [Installation](#installation)
 
 
-## Project Motivation and Overview<a name="motivation"></a>
+# Project Overview<a name="overview"></a>
 
 This is the capstone project of Udacity's Data Science Nanodegree programm. This repository contains the Jupyter-notebook of this project and below you can find an informative brief overview of the project.
 
-### Problem
+## Problem
 
 Sparkify is an imaginary music streaming platform with two types of membership:
 1. premium: monthly paid rate
@@ -26,7 +28,7 @@ Both scenarios needs to be prevented. This could be done with targeted discounts
 
 Fortunately Sprakify has a logfile of all user events which can be analysed and used to predict the user churn in an early state. Thus the enourmous amount of data this project usses **Apache Spark** as engine for the large-scale data processing and applying Machine Learning algorithms.
 
-### Event log
+## Event logfile
 
 Sparkify's event log is very detailled and every entry of the log contains the following variables:
 
@@ -53,42 +55,60 @@ Sparkify's event log is very detailled and every entry of the log contains the f
 
 **Note:** The data types of some variables need to be converted for further processing, e.g. ts and registration into a datetime object or length into a floating point number. 
 
+### Variable: `page`
+
+Beside the `userId` the variable `page` is the most important variable thus it determines exactly which event was triggered by the user.
+
+# Data Exploration<a name="dataexploration"></a>
+
+For insights in the data exploration please take a look at the notebook (file: `Sparkidy.ipynb`) and [this blospost](https://lethiess.medium.com/how-to-detect-user-churn-in-a-early-state-4a51e52c37e7).
+
+# Methodology<a name="methodology"></a>
+
+In this section the methodology of this project is explained.
+
+## Data preprocessing
+
+Once the dataset is loaded with Spark the data needs to be cleaned in an preprocessing step.
+
 ### Data cleaning
 
 A single event in the event log is valid, if none of the following variables is null:
 `userId`, `sessionId`, `method`, `page`, `ts`,`registration`, `level`, `userAgent`, `method`, `status`
 
-### Variable: `page`
+All invalid datasets will be dropped.
 
-Beside the `userId` the vaariable `page` is the most important variable thus it determines exactly which event was triggered by the user.
+## Feature engineering
+
+The following section gives an brief overview about the features needed to train the Machine Learning models and predict the user churn in the event log. 
 
 ### Define churn feature
+
+The most important feature is the feature churn which indicates the user churn.
 
 | Churn value | User action
 | :---        | :---
 | 0           | User never accessed the page "Cancellation Confirmation"
 | 1           | User at lear once accessed the page "Cancellation Confirmation"
 
-**Note:** This vaule should be predicted and is the target variable for all applyied Machine Learning algorithms.
+**Note I:** This vaule should be predicted and is the target variable for all applyied Machine Learning algorithms.
+**Note II:** The distribution of the churn values are imbalanced in the given dataset.
 
-### Data Exploration
+### Define: Categorical features
 
-For insights in the data exploration please thake a look at the nootenook and [this](https://lethiess.medium.com/how-to-detect-user-churn-in-a-early-state-4a51e52c37e7) blogpost.
-
-### Building Features
-
-**Categorical features**
+The following table contains all used categorical variables:
 
 | Variable name	   |Number of categories |	Description
 | :---             | :---          | :---
 | Level	           | 2             | Membership type of the user: Paid premium subsrciption or free ad-financed account.
-| Downgrad         | 2	|  Determines if a user at least once performed a downgrad from a paid premium subscription to a free account.
+| Downgrade         | 2	|  Determines if a user at least once performed a downgrade from a paid premium subscription to a free account.
 | Gender	|2|	 Describes the gender of the user. In this dataset only two gender ocurred, but it could be more.
 | Operating System	|5 | This variable describes which operating system was used to access Sparkify.
 | Browser |	4	| Which browser was used to access Sparkify is described by the user.
 
+### Define: Numerical features
 
-**Numerical features**
+The following table contains all used numerical variables:
 
 | Variable  name	| Description
 | :---        | :---
@@ -103,11 +123,13 @@ For insights in the data exploration please thake a look at the nootenook and [t
 | Advert rolled	| Number of adverts where showed to user with a free account.
 
 
+## Creating the model dataset
 
 
-processing the features
 
-### Building Model
+
+
+## Building Model
 
 For solving the classification problem the following four classifier are used:
 * Logistic Regression
@@ -135,7 +157,7 @@ After cross validation with the used parameter grid three classifier have perfor
 For furhter detailes please take a look at the notebook and the [this](https://lethiess.medium.com/how-to-detect-user-churn-in-a-early-state-4a51e52c37e7) blogpost.
 
 
-## File Descriptions <a name="files"></a>
+# File Descriptions <a name="files"></a>
 
 The following files are included in this repository:
 
@@ -150,7 +172,7 @@ The following files are included in this repository:
 | `data/medium_sparkifty_event_data.json`   | Medium sized dataset (~240 MB)
 
 
-## Installation <a name="installation"></a>
+# Installation <a name="installation"></a>
 
 This sections gives an overview about how to install Jupyter notebook and which libraries
 are used to run the given notebook.
