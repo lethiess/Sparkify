@@ -13235,7 +13235,7 @@ div#notebook {
         <div>
             <p><b>SparkContext</b></p>
 
-            <p><a href="http://a8f7dea84ab2:4040">Spark UI</a></p>
+            <p><a href="http://486837045d85:4040">Spark UI</a></p>
 
             <dl>
               <dt>Version</dt>
@@ -17377,7 +17377,7 @@ Total total playtime for non-churn users: 238.93 hours.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># save the model as pickle file</span>
@@ -17391,7 +17391,7 @@ Total total playtime for non-churn users: 238.93 hours.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load the saved dataframe</span>
@@ -17420,7 +17420,7 @@ Total total playtime for non-churn users: 238.93 hours.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_cross_validator</span><span class="p">(</span><span class="n">classifier</span><span class="p">):</span>
@@ -17487,7 +17487,7 @@ Total total playtime for non-churn users: 238.93 hours.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_and_evaluate_model</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
@@ -17542,7 +17542,7 @@ Total total playtime for non-churn users: 238.93 hours.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compare_classifier</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">classifier</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;LinearSVC&quot;</span><span class="p">,</span> <span class="s2">&quot;GBTClassifier&quot;</span><span class="p">,</span> <span class="s2">&quot;RandomForestClassifier&quot;</span><span class="p">,</span> <span class="s2">&quot;LogisticRegression&quot;</span><span class="p">]):</span>
@@ -17582,7 +17582,7 @@ Total total playtime for non-churn users: 238.93 hours.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run the classifier comparision</span>
@@ -17604,8 +17604,8 @@ Total total playtime for non-churn users: 238.93 hours.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Classifier: LogisticRegression - F1-Score: 0.79 - accuracy: 0.80
-Classifier: RandomForestClassifier - F1-Score: 0.77 - accuracy: 0.80
-Classifier: GBTClassifier - F1-Score: 0.77 - accuracy: 0.80
+Classifier: RandomForestClassifier - F1-Score: 0.71 - accuracy: 0.76
+Classifier: GBTClassifier - F1-Score: 0.92 - accuracy: 0.92
 Classifier: LinearSVC - F1-Score: 0.77 - accuracy: 0.80
 </pre>
 </div>
