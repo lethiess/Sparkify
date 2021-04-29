@@ -130,7 +130,7 @@ The following table contains all used numerical variables:
 
 ## Creating the model dataset
 
-The model dataset contrains the churn feature and the categorical and numerical variables. Whereas the churn features is used as target variable in the subsequent Machine Learning algorithms to classify if a user will churn or not. Each prediction is based on the categorical and numerical features. 
+The model dataset contains the churn feature and the categorical and numerical variables. Whereas the churn features is used as target variable in the subsequent Machine Learning algorithms to classify if a user will churn or not. Each prediction is based on the categorical and numerical features. 
 
 For an efficient processing the features will be processed with a [Spark ML Pipeline](https://spark.apache.org/docs/latest/ml-pipeline.html) with the following stages:
 * [String Indexer](https://spark.apache.org/docs/latest/ml-features#stringindexer)
